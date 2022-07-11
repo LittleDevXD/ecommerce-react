@@ -6,4 +6,9 @@
     h3 {
         margin: 0 10px;
     }
+    
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+    }
 }

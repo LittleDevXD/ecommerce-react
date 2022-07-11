@@ -4,18 +4,13 @@ import { auth, signInWithGooglePopUp, createUserDocFromAuth, signInWithGoogleRed
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 import SignInForm from "../../components/sign-in-form/sign-in-form.component";
 
-import './sign-in.styles.scss';
+import './authentication.styles.scss';
 
-const SignInPage = () => {
+const Authentication = () => {
     // useEffect(async () => {
     //     const response = await getRedirectResult(auth);
     //     console.log(response);
     // }, []);
-
-    const logGoogleUser = async () => {
-        const response = await signInWithGooglePopUp();
-        const userDoc = await createUserDocFromAuth(response.user);
-    }
 
     // const logGoogleRedirectUser = async () => {
     //     const response = await signInWithGoogleRedirect();
@@ -30,4 +25,4 @@ const SignInPage = () => {
     )
 }
 
-export default SignInPage;
+export default Authentication;

@@ -1,5 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithRedirect, signInWithPopup, createUserWithEmailAndPassword } from 'firebase/auth';
+import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    signInWithRedirect, 
+    signInWithPopup, 
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+} from 'firebase/auth';
 import { getFirestore, getDoc, setDoc, doc, collection } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -53,7 +61,16 @@ export const createUserDocFromAuth = async (userAuth, additionalInfo = {}) => {
     return userDocRef;
 }
 
-export const createAuthUserWithEmailAndPassword = (email, password) => {
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email && !password) return;
-    return createUserWithEmailAndPassword(auth, email, password);
+    return await createUserWithEmailAndPassword(auth, email, password);
+}
+
+export const signInUserWithEmailAndPassword = async (email, password) => {
+    if (!email && !password) return;
+    return await signInWithEmailAndPassword(auth, email, password);
+}
+
+export const signOutUser = async () => {
+    return await signOut(auth);
 }
