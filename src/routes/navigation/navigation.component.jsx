@@ -9,11 +9,10 @@ import './navigation.styles.scss';
 import { ReactComponent as CrownLogo } from './../../assets/crown.svg';
 
 const Navigation = () => {
-    const { currentUser, setCurrentUser } = useContext(UserContext);
+    const { currentUser } = useContext(UserContext);
     
     const handleSignOut = async () => {
-        const user = await signOutUser();
-        setCurrentUser(null);
+        await signOutUser();
     }
 
     return (

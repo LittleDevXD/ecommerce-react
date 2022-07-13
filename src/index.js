@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { UserProvider } from './contexts/user-context.component';
+import { ProductsProvider } from './contexts/shop-context.component';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
@@ -10,7 +11,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <App />
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
