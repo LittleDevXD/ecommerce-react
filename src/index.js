@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { UserProvider } from './contexts/user-context.component';
-import { ProductsProvider } from './contexts/shop-context.component';
+import { CategoriesProvider } from './contexts/categories-context.component';
 import { CartProvider } from './contexts/cart-context.component';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
@@ -12,11 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <ProductsProvider>
+        <CategoriesProvider>
           <CartProvider>
             <App />
           </CartProvider>
-        </ProductsProvider>
+        </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
